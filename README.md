@@ -4,6 +4,8 @@ This action allows caching dependencies and build outputs to improve workflow ex
 
 <a href="https://github.com/actions/cache/actions?query=workflow%3ATests"><img alt="GitHub Actions status" src="https://github.com/actions/cache/workflows/Tests/badge.svg?branch=main&event=push"></a>
 
+This is a variant of the cache action that only saves the cache if it didn't get a cache hit at the start.
+
 ## Documentation
 
 See ["Caching dependencies to speed up workflows"](https://help.github.com/github/automating-your-workflow-with-github-actions/caching-dependencies-to-speed-up-workflows).

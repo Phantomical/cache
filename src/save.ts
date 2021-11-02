@@ -1,7 +1,7 @@
 import * as cache from "@actions/cache";
 import * as core from "@actions/core";
 
-import { Events, Inputs, State } from "./constants";
+import { Events, Inputs, State, Outputs } from "./constants";
 import * as utils from "./utils/actionUtils";
 
 // Catch and log any unhandled exceptions.  These exceptions can leak out of the uploadChunk method in
@@ -24,6 +24,10 @@ async function run(): Promise<void> {
                     process.env[Events.Key]
                 } is not supported because it's not tied to a branch or tag ref.`
             );
+            return;
+        }
+
+        if (core.getState(Outputs.CacheHit) == 'true') {
             return;
         }
 

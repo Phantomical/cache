@@ -24,6 +24,7 @@ export function setCacheState(state: string): void {
 
 export function setCacheHitOutput(isCacheHit: boolean): void {
     core.setOutput(Outputs.CacheHit, isCacheHit.toString());
+    core.saveState(Outputs.CacheHit, isCacheHit.toString());
 }
 
 export function setOutputAndState(key: string, cacheKey?: string): void {
